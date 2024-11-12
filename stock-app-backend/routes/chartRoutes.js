@@ -3,7 +3,6 @@ const { getStockData, getTopNStocks } = require('../controllers/chartController'
 const jwt = require('jsonwebtoken');
 const router = express.Router();
 
-// Middleware to verify token and access rights
 const verifyToken = (req, res, next) => {
   const token = req.headers['authorization'];
   if (!token) return res.status(403).send('Token required');
@@ -15,7 +14,6 @@ const verifyToken = (req, res, next) => {
   });
 };
 
-// Get stock data for charting
 router.get('/data', verifyToken, async (req, res) => {
   const { startDate, endDate } = req.query;
   
@@ -27,7 +25,6 @@ router.get('/data', verifyToken, async (req, res) => {
   }
 });
 
-// Get top N stocks
 router.get('/top-n', verifyToken, async (req, res) => {
   const { startDate, endDate, n } = req.query;
   
