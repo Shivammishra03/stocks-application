@@ -1,4 +1,3 @@
-// importData.js
 const xlsx = require('xlsx');
 const db = require('./config/db');
 
@@ -10,7 +9,7 @@ data.forEach(row => {
     console.log("Processing row:", row);
   const { Symbol, Date, open, high, low, close_price, adj_total_value, net_turnover, market_cap } = row;
   const sql = `INSERT INTO stock_data (symbol, date, open, high, low, close_price, adj_total_value, net_turnover, market_cap)
-               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+VALUES ('${Symbol}', '${Date}', '${open}', '${high}', '${low}', '${close_price}', '${adj_total_value}', '${net_turnover}', '${market_cap}');`;
   db.query(sql, [Symbol, Date, open, high, low, close_price, adj_total_value, net_turnover, market_cap], (err) => {
     if (err) throw err;
   });

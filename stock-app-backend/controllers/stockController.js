@@ -1,4 +1,3 @@
-// controllers/stockController.js
 const db = require('../config/db');
 
 exports.getStocks = (req, res) => {
