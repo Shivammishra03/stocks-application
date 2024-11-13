@@ -1,7 +1,7 @@
 <template>
   <div class="flex items-center justify-center min-h-screen bg-gradient-to-br from-yellow-400 to-pink-500">
     <div class="w-full max-w-md p-8 space-y-6 bg-white rounded-lg shadow-md">
-      <h2 class="text-2xl font-bold text-center text-gray-800">Welcome Back</h2>
+      <h2 class="text-2xl font-bold text-center text-gray-800">Welcome</h2>
       <p class="text-center text-gray-500">Please log in to your account</p>
       <form @submit.prevent="handleLogin" class="space-y-4">
         <div>
