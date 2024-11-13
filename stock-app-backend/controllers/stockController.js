@@ -13,7 +13,7 @@ exports.getStocks = (req, res) => {
 exports.getTopStocks = (req, res) => {
   const { startDate, endDate, limit } = req.query;
 
-  const sql = `SELECT * FROM stock_data WHERE date BETWEEN '${startDate}' AND '${endDate}' ORDER BY close_price DESC LIMIT '${limit}'`;
+  const sql = `SELECT * FROM stock_data WHERE date BETWEEN '${startDate}' AND '${endDate}' ORDER BY close_price DESC LIMIT ${limit}`;
   
 
   db.query(sql, [startDate, endDate, parseInt(limit)], (err, result) => {

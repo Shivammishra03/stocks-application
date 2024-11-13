@@ -1,5 +1,5 @@
 <template>
-    <nav class="bg-yellow-500 p-4 flex justify-between items-center">
+    <nav class="bg-yellow-500 p-4 flex justify-between items-center rounded-md">
         <div class="text-white font-bold text-lg">Stock Dashboard</div>
         <div class="space-x-4">
             <span class="text-white font-medium">{{ username }}</span>
