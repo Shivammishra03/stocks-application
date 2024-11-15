@@ -12,7 +12,6 @@ import {
   PointElement,
 } from "chart.js";
 
-// Register chart components from chart.js
 ChartJS.register(
   Title,
   Tooltip,
@@ -23,7 +22,6 @@ ChartJS.register(
   PointElement
 );
 
-// Define the props for the component (to receive data from the parent)
 const props = defineProps({
   data: {
     type: Object,
@@ -31,15 +29,12 @@ const props = defineProps({
   },
 });
 
-// Initialize chartData as a reactive reference
 const chartData = ref(props.data);
 
-// Watch for changes in data and update the chartData accordingly
 watch(() => props.data, (newData) => {
-  chartData.value = newData;  // Update chart data when prop changes
+  chartData.value = newData;
 });
 
-// Set chart options
 const options = ref({
   responsive: true,
   plugins: {
